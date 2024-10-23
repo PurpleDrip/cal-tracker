@@ -19,6 +19,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
 // Routes
+app.use('/',(req,res)=>{
+  return res.status(200).json({message:"Hello there"});
+}
+  
 app.post("/api/addMeal", isExisting, addMeal);
 app.post("/api/createPlanner", isValid, addingMeal);
 app.get("/api/getCount", calculate);
